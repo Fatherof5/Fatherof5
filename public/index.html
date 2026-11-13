@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101116">
+<title>Father_of_5's Trading .co</title>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brandmark">F5</div>
+  <div><div class="eyebrow">TORN CITY • PLAYER TRADING</div><h1>Father_of_5's <span>Trading .co</span></h1></div>
+  <button id="adminOpen" class="outline">Control panel</button>
+</header>
+<main>
+  <section class="hero">
+    <div><div class="pill"><i></i> BUYING • OPEN 24/7</div><h2>My current buying prices</h2>
+    <p>These are the prices I'm currently paying. Any quantity welcome.</p></div>
+    <div class="hero-stat"><strong id="itemCount">—</strong><small>ITEMS BUYING</small></div>
+  </section>
+  <section class="toolbar">
+    <input id="search" type="search" placeholder="Search items…" aria-label="Search items">
+    <select id="category"><option value="all">All listed items</option></select>
+    <button id="refresh" class="goldbtn">Refresh</button>
+  </section>
+  <div class="statusline"><span id="status">Loading price list…</span><span id="updated"></span></div>
+  <section id="items" class="itemgrid"></section>
+  <div id="empty" class="empty hidden">No items match your search.</div>
+  <section class="notice"><strong>Trading information</strong><p>Prices are offers, not guaranteed purchases. Please contact me in Torn to arrange a trade. All quantities considered.</p></section>
+</main>
+<footer><span>Father_of_5's Trading .co</span><span id="dataCredit">Bazaar data: <a href="https://torn-tracker.com/guide/website/open-data/" target="_blank" rel="noopener">Torn Tracker contributors</a> • CC BY 4.0</span></footer>
+
+<div id="adminModal" class="modal hidden">
+  <div class="panel">
+    <div class="panelhead"><div><div class="eyebrow">PRIVATE SETTINGS</div><h2>Trader Control Center</h2></div><button id="closeAdmin" class="close">×</button></div>
+    <div id="loginBox">
+      <p>Enter your admin password to manage your public buying prices.</p>
+      <input id="password" type="password" placeholder="Admin password" autocomplete="current-password">
+      <button id="login" class="goldbtn full">Unlock control panel</button>
+      <p class="muted tiny">Your password is sent only to your own Cloudflare Worker over HTTPS. Do not share it.</p>
+    </div>
+    <div id="adminBox" class="hidden">
+      <div class="admin-actions">
+        <button id="save" class="goldbtn">Save changes</button>
+        <button id="forceRefresh" class="outline">Refresh source data</button>
+        <button id="fetchCatalog" class="outline">Fetch full Torn catalogue</button>
+        <button id="logout" class="outline">Lock</button>
+      </div>
+      <div class="importrow">
+        <label class="filebtn">Import catalogue (JSON)<input id="catalogFile" type="file" accept=".json,application/json"></label>
+        <button id="addItem" class="outline">Add item by ID</button>
+      </div>
+      <p class="muted tiny">Use Fetch full Torn catalogue to load items directly from Torn (server-side API key required), or import a catalogue JSON file. Only items you enable appear publicly. You can also add any item by its Torn item ID.</p>
+      <div class="settingrow">
+        <label><input id="monitorAll" type="checkbox"> Monitor all imported items</label>
+        <span class="muted tiny">Switch off to monitor only items you enable.</span>
+      </div>
+      <input id="adminSearch" type="search" placeholder="Find an item in your catalog…">
+      <div id="adminItems" class="adminitems"></div>
+      <div id="adminMessage" class="muted tiny"></div>
+    </div>
+  </div>
+</div>
+<script src="/app.js"></script>
+</body></html>
