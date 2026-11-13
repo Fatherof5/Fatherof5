@@ -10,7 +10,7 @@ not_found_handling = "single-page-application"
 [[d1_databases]]
 binding = "DB"
 database_name = "father-of-5-trading"
-database_id = "REPLACE_WITH_YOUR_D1_DATABASE_ID"
+database_id = "a48ec30b-d7e9-4831-a465-6b3a8e3587be"
 
 [triggers]
 crons = ["* * * * *"]
